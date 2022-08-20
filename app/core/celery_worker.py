@@ -3,9 +3,7 @@ from celery import Celery
 from app.db.db_parser import DbParser
 
 
-celery = Celery(
-    "tasks", broker="redis://localhost:6379/0", backend="redis://localhost:6379/0"
-)
+celery = Celery("tasks", broker="redis://redis:6379/0", backend="redis://redis:6379/0")
 
 
 @celery.task(name="schema", bind=True)
