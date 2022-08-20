@@ -1,5 +1,7 @@
-from fastapi import Fastapi
+from fastapi import FastAPI
+from app.api.v1.api import api_router
 
-app = Fastapi(title="my-sample-app")
 
+app = FastAPI(title="starlight")
 
+app.include_router(api_router)
